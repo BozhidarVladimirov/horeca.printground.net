@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printground – Branded Hotel Products | Hotels & SPA</title>
+  <meta name="description" content="Custom branded products for hotels, SPA and wellness centers. Slippers, beach umbrellas, towels with your logo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Print Ground logo linkedin-01.png">
+
+  <style>
+    :root {
+      --deep-sea: #0a2342;
+      --ocean: #1a4b7a;
+      --azure: #2a7fca;
+      --aqua: #4ecdc4;
+      --foam: #e8f4f8;
+      --sand: #f5ede0;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --text-dark: #1a2535;
+      --text-mid: #4a5568;
+      --text-light: #8899aa;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,35,66,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.4s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--aqua), var(--azure));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: white;
+      font-size: 18px;
+      letter-spacing: -1px;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .logo-text span { color: var(--aqua); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--deep-sea);
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover { background: #e0bc5a; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(42,127,202,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(78,205,196,0.15) 0%, transparent 50%),
+        linear-gradient(160deg, var(--deep-sea) 0%, #0d2d4e 50%, #0f3860 100%);
+    }
+
+    /* Wave decoration */
+    .hero-waves {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      overflow: hidden;
+    }
+
+    .hero-waves svg { width: 100%; height: 100%; }
+
+    /* Floating circles */
+    .hero-circles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(78,205,196,0.15);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .circle-1 { width: 500px; height: 500px; top: -100px; right: -100px; animation-delay: 0s; }
+    .circle-2 { width: 300px; height: 300px; bottom: 100px; right: 200px; animation-delay: 2s; border-color: rgba(201,168,76,0.1); }
+    .circle-3 { width: 200px; height: 200px; top: 200px; right: 400px; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.02); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(78,205,196,0.15);
+      border: 1px solid rgba(78,205,196,0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 12px;
+      color: var(--aqua);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--aqua);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: white;
+      margin-bottom: 28px;
+    }
+
+    .hero-title strong {
+      font-weight: 600;
+      font-style: italic;
+      color: var(--aqua);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--aqua), var(--azure));
+      color: white;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 8px 32px rgba(78,205,196,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(78,205,196,0.4);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* Hero stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+
+    .stat {
+      background: rgba(10,35,66,0.6);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--aqua);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Hero visual side */
+    .hero-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 36px;
+      backdrop-filter: blur(10px);
+      transition: all 0.4s;
+    }
+
+    .hero-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(78,205,196,0.3);
+      transform: translateY(-4px);
+    }
+
+    .hero-card:first-child {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .card-icon {
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: white;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+
+    .card-price {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 16px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── TARGETS ── */
+    .targets {
+      padding: 80px 60px;
+      background: var(--foam);
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--deep-sea);
+      margin-bottom: 48px;
+      line-height: 1.2;
+    }
+
+    .targets-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .target-card {
+      background: white;
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(10,35,66,0.06);
+      transition: all 0.4s;
+      border: 1px solid transparent;
+    }
+
+    .target-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(10,35,66,0.12);
+      border-color: rgba(78,205,196,0.3);
+    }
+
+    .target-icon {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 28px;
+      margin: 0 auto 28px;
+      box-shadow: 0 16px 40px rgba(10,35,66,0.18);
+    }
+
+    .target-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--deep-sea);
+      margin-bottom: 12px;
+    }
+
+    .target-text {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── PRODUCTS ── */
+    .products {
+      padding: 100px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .products-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
+    .products-intro .section-label { text-align: left; }
+    .products-intro .section-title { text-align: left; margin-bottom: 0; }
+
+    .products-intro-text {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* Product tabs */
+    .product-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 1px solid #e2e8f0;
+      color: var(--text-mid);
+      background: white;
+    }
+
+    .tab.active, .tab:hover {
+      background: var(--deep-sea);
+      color: white;
+      border-color: var(--deep-sea);
+    }
+
+    /* Product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(10,35,66,0.06);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid #f0f4f8;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(10,35,66,0.14);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-image-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      gap: 8px;
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product-category {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 8px;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--deep-sea);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .product-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .detail-tag {
+      background: var(--foam);
+      color: var(--ocean);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #f0f4f8;
+    }
+
+    .product-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--deep-sea);
+      letter-spacing: -1px;
+    }
+
+    .product-price span {
+      font-size: 18px;
+      color: var(--text-light);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .product-cta {
+      background: var(--deep-sea);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .product-cta:hover {
+      background: var(--ocean);
+      transform: translateY(-1px);
+    }
+
+    /* ── PRODUCT MODAL ── */
+    .product-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,35,66,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .product-modal {
+      background: white;
+      border-radius: 20px;
+      max-width: 1200px;
+      width: 100%;
+      max-height: 95vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(10,35,66,0.3);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      font-size: 24px;
+      color: var(--deep-sea);
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--deep-sea);
+      color: white;
+      transform: rotate(90deg);
+    }
+
+    .modal-gallery {
+      padding: 30px;
+      background: var(--foam);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-main-image {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(10,35,66,0.08);
+    }
+
+    .modal-thumb-row {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+    }
+
+    .modal-thumb-row::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .modal-thumb-row::-webkit-scrollbar-thumb {
+      background: rgba(10,35,66,0.2);
+      border-radius: 3px;
+    }
+
+    .modal-thumb {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      background: white;
+      border-radius: 10px;
+      padding: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(10,35,66,0.06);
+      flex-shrink: 0;
+    }
+
+    .modal-thumb:hover, .modal-thumb.active {
+      border-color: var(--aqua);
+      transform: scale(1.05);
+    }
+
+    .modal-info {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-sku {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--deep-sea);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .modal-price {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--deep-sea);
+      margin-bottom: 20px;
+    }
+
+    .modal-desc {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .modal-colors {
+      margin-bottom: 24px;
+    }
+
+    .modal-colors-label {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .modal-colors-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .modal-color {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-mid);
+    }
+
+    .modal-color-swatch {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+    }
+
+    .modal-personalization {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .modal-pers-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--deep-sea);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .modal-pers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .modal-pers-item {
+      text-align: center;
+    }
+
+    .modal-pers-item img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: var(--foam);
+      border-radius: 10px;
+      padding: 8px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 12px rgba(10,35,66,0.06);
+    }
+
+    .modal-pers-tech {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--deep-sea);
+      margin-bottom: 3px;
+    }
+
+    .modal-pers-detail {
+      font-size: 10px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .modal-cta {
+      margin-top: 24px;
+      background: var(--gold);
+      color: var(--deep-sea);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .modal-cta:hover {
+      background: #e0bc5a;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .product-modal {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+      }
+      .modal-gallery { padding: 24px; }
+      .modal-info { padding: 24px; }
+      .modal-pers-grid { grid-template-columns: 1fr; }
+    }
+
+    .product-card { cursor: pointer; }
+
+    /* Branding colors */
+    .branding-colors {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .color-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .color-dot:hover { transform: scale(1.3); }
+
+    /* ── WHY SECTION ── */
+    .why {
+      background: linear-gradient(160deg, var(--deep-sea), #0f3860);
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(78,205,196,0.08) 0%, transparent 70%);
+    }
+
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .why .section-label, .why .section-title {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .why .section-title { color: white; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+    }
+
+    .why-item {
+      text-align: center;
+    }
+
+    .why-icon {
+      width: 64px; height: 64px;
+      background: rgba(78,205,196,0.1);
+      border: 1px solid rgba(78,205,196,0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .why-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .why-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: 100px 60px;
+      background: var(--sand);
+    }
+
+    .process-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 32px; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 64px; height: 64px;
+      background: var(--deep-sea);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: white;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--deep-sea);
+      margin-bottom: 8px;
+    }
+
+    .step-text {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── CONTACT / CTA ── */
+    .contact-section {
+      padding: 100px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--deep-sea);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .contact-left h2 em {
+      font-style: italic;
+      color: var(--azure);
+    }
+
+    .contact-left p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .contact-ico {
+      width: 40px; height: 40px;
+      background: var(--foam);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-detail {
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+
+    .contact-detail strong { display: block; font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+
+    /* Form */
+    .contact-form {
+      background: white;
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 60px rgba(10,35,66,0.1);
+    }
+
+    .form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--deep-sea);
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid #e8edf4;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      background: #fafbfd;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--aqua);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(78,205,196,0.1);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--deep-sea), var(--ocean));
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(10,35,66,0.3);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .form-subtitle {
+      font-size: 13px;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+    }
+
+    .form-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .form-success .success-icon { font-size: 48px; margin-bottom: 16px; }
+    .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--deep-sea); margin-bottom: 12px; }
+    .form-success p { color: var(--text-mid); font-size: 14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--deep-sea);
+      padding: 60px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: white;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo span { color: var(--aqua); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 32px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--aqua); }
+
+    .footer-bottom {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .hero-content { grid-template-columns: 1fr; padding: 100px 24px 80px; }
+      .hero-visual { display: none; }
+      .targets-grid { grid-template-columns: 1fr; padding: 0; }
+      .targets { padding: 60px 24px; }
+      .products { padding: 60px 24px; }
+      .products-intro { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr; }
+      .why { padding: 60px 24px; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .process { padding: 60px 24px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
+      .contact-section { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+      .contact-form { padding: 32px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 40px 24px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* ── URGENCY BAR ── */
+    .urgency-bar {
+      background: linear-gradient(90deg, var(--ocean), var(--azure));
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      position: relative;
+      z-index: 101;
+    }
+    .urgency-bar strong { color: #ffe080; }
+    .urgency-countdown {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 12px;
+      background: rgba(0,0,0,0.2);
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .urgency-countdown span { color: #ffe080; font-weight: 700; font-size: 14px; }
+
+    /* ── SOCIAL PROOF BAR ── */
+    .social-proof {
+      background: var(--deep-sea);
+      padding: 32px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .proof-icon { font-size: 28px; }
+    .proof-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--aqua);
+    }
+    .proof-text span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .proof-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--sand);
+      padding: 80px 60px;
+    }
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(10,35,66,0.06);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px; right: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--foam);
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--aqua), var(--azure));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: white;
+      font-weight: 600;
+    }
+    .author-name { font-weight: 500; font-size: 14px; color: var(--text-dark); }
+    .author-role { font-size: 12px; color: var(--text-light); }
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--deep-sea);
+      padding: 12px 20px;
+      box-shadow: 0 -4px 20px rgba(10,35,66,0.2);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .sticky-cta a {
+      display: block;
+      background: linear-gradient(135deg, var(--aqua), var(--azure));
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 70px; }
+      .social-proof { padding: 24px; gap: 24px; }
+      .proof-divider { display: none; }
+      .testimonials { padding: 60px 24px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  ☀️ <strong>Summer 2026:</strong> Secure your branded products early — June orders closing soon!
+  <span class="urgency-countdown">🕐 Limited spots <span id="spotsLeft">12</span> remaining</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="Print Ground logo linkedin-01.png" alt="Printground" style="height: 120px; width: auto;">
+  </a>
+  <a href="#contact" class="nav-cta">Request a Quote →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">For Hotels & SPA</div>
+      <h1 class="hero-title">
+        Branded Products for<br>
+        <strong>Unforgettable</strong><br>
+        Hospitality
+      </h1>
+      <p class="hero-subtitle">
+        Slippers, towels and beach umbrellas with your logo. Make every guest touchpoint a brand experience.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Request a Quote</a>
+        <a href="#products" class="btn-ghost">View Products</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Min. Order</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24h</span>
+          <span class="stat-label">Quote Response</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">EU</span>
+          <span class="stat-label">EU Shipping</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="https://printground.net/wp-content/uploads/2025/03/image11111123-300x300.jpg" alt="DANES Slippers" style="width: 120px; height: 120px; object-fit: cover; border-radius: 16px; flex-shrink: 0;">
+        <div>
+          <div class="card-title">Hotel Slippers</div>
+          <div class="card-desc">Unisex, polyester. Your logo on every step.</div>
+          <div class="card-price">from €1.78 / pc</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://printground.net/wp-content/uploads/2025/03/imag1234e-300x300.jpg" alt="DERING Ομπρέλα" style="width: 120px; height: 120px; object-fit: cover; border-radius: 16px; flex-shrink: 0;">
+        <div class="card-title">Beach Umbrella</div>
+        <div class="card-desc">Branded beach</div>
+        <div class="card-price">€9.90</div>
+      </div>
+      <div class="hero-card">
+        <img src="https://printground.net/wp-content/uploads/2025/03/imag1111e-300x300.jpg" alt="CALIFORNIA Πετσέτα" style="width: 120px; height: 120px; object-fit: cover; border-radius: 16px; flex-shrink: 0;">
+        <div class="card-title">Beach Towels</div>
+        <div class="card-desc">3 types & sizes</div>
+        <div class="card-price">from €6.29</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-waves">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="social-proof fade-in">
+  <div class="proof-item">
+    <div class="proof-icon">🏨</div>
+    <div class="proof-text">
+      <strong>500+</strong>
+      <span>Hotels & SPA</span>
+    </div>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <div class="proof-icon">🇪🇺</div>
+    <div class="proof-text">
+      <strong>18</strong>
+      <span>EU Countries</span>
+    </div>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <div class="proof-icon">📦</div>
+    <div class="proof-text">
+      <strong>1M+</strong>
+      <span>Products Delivered</span>
+    </div>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <div class="proof-icon">⭐</div>
+    <div class="proof-text">
+      <strong>4.9/5</strong>
+      <span>Customer Rating</span>
+    </div>
+  </div>
+</div>
+
+<!-- TARGETS -->
+<section class="targets">
+  <div class="section-label">Ideal For</div>
+  <h2 class="section-title">Designed for your<br>needs</h2>
+  <div class="targets-grid fade-in">
+    <div class="target-card">
+      <img class="target-icon" src="https://printground.net/wp-content/uploads/2025/03/image11111123-300x300.jpg" alt="Hotel Slippers">
+      <h3 class="target-title">Hotels</h3>
+      <p class="target-text">Seaside or mountain resorts, boutique or chain — branded amenities that impress every guest.</p>
+    </div>
+    <div class="target-card">
+      <img class="target-icon" src="https://printground.net/wp-content/uploads/2025/03/image-300x300.jpg" alt="Towels SPA">
+      <h3 class="target-title">SPA Centers</h3>
+      <p class="target-text">Towels and slippers with your logo for a complete premium relaxation experience.</p>
+    </div>
+    <div class="target-card">
+      <img class="target-icon" src="https://printground.net/wp-content/uploads/2025/03/imag1234566666e-300x300.jpg" alt="Eco Products Wellness">
+      <h3 class="target-title">Wellness Centers</h3>
+      <p class="target-text">Strengthen your brand with products that reflect your values: quality, care, wellness.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-intro fade-in">
+    <div>
+      <div class="section-label">Our Products</div>
+      <h2 class="section-title">Every detail<br>with your brand</h2>
+    </div>
+    <p class="products-intro-text">
+      Choose from hundreds of colors and printing techniques. Minimum order 50 pieces. Shipping throughout Greece and the EU.
+    </p>
+  </div>
+
+  <div class="product-tabs">
+    <div class="tab active" onclick="filterProducts('all', this)">All Products</div>
+    <div class="tab" onclick="filterProducts('slippers', this)">Slippers</div>
+    <div class="tab" onclick="filterProducts('umbrella', this)">Umbrellas</div>
+    <div class="tab" onclick="filterProducts('towel', this)">Towels</div>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+
+    <!-- SLIPPERS -->
+    <div class="product-card fade-in" data-category="slippers" onclick="openModal('danesModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/image11111123-300x300.jpg" alt="DANES Slippers Υπνοδωματίου">
+      <div class="product-body">
+        <div class="product-category">Hotel Slippers</div>
+        <h3 class="product-name">DANES — Slippers Υπνοδωματίου</h3>
+        <p class="product-desc">Unisex polyester slippers, ideal for hotels, SPA and wellness centers. Comfortable, lightweight, with color options.</p>
+        <div class="product-details">
+          <span class="detail-tag">Polyester</span>
+          <span class="detail-tag">Unisex</span>
+          <span class="detail-tag">Logo</span>
+          <span class="detail-tag">Multiple colors</span>
+        </div>
+        <div class="branding-colors">
+          <div class="color-dot" style="background:#fff; border: 1px solid #ddd;" title="White"></div>
+          <div class="color-dot" style="background:#1a4b7a;" title="Blue"></div>
+          <div class="color-dot" style="background:#2d2d2d;" title="Black"></div>
+          <div class="color-dot" style="background:#c9a84c;" title="Gold"></div>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€1.78 <span>/ pc (50+ τεμ.)</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- UMBRELLA -->
+    <div class="product-card fade-in" data-category="umbrella" onclick="openModal('deringModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/imag1234e-300x300.jpg" alt="DERING Ομπρέλα Παραλίας">
+      <div class="product-body">
+        <div class="product-category">Beach Umbrella</div>
+        <h3 class="product-name">DERING — Beach Umbrella</h3>
+        <p class="product-desc">Durable ομπρέλα παραλίας με δυνατότητα εκτύπωσης λογοτύπου. Ιδανική για παραλιακά ξενοδοχεία και beach clubs με branded εμπειρία.</p>
+        <div class="product-details">
+          <span class="detail-tag">Full Print</span>
+          <span class="detail-tag">Durable</span>
+          <span class="detail-tag">UV Protection</span>
+          <span class="detail-tag">Beach & Pool</span>
+        </div>
+        <div class="branding-colors">
+          <div class="color-dot" style="background:#2a7fca;" title="Blue"></div>
+          <div class="color-dot" style="background:#e74c3c;" title="Red"></div>
+          <div class="color-dot" style="background:#27ae60;" title="Πράσινο"></div>
+          <div class="color-dot" style="background:#f39c12;" title="Orange"></div>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€9.90 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEACH TOWEL 1 -->
+    <div class="product-card fade-in" data-category="towel" onclick="openModal('californiaModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/imag1111e-300x300.jpg" alt="CALIFORNIA Πετσέτα Παραλίας">
+      <div class="product-body">
+        <div class="product-category">Πετσέτα Παραλίας</div>
+        <h3 class="product-name">CALIFORNIA — Beach Towel 250 g/m²</h3>
+        <p class="product-desc">Lightweight beach towel, ideal for pool areas and beach. Logo printing in vivid colors.</p>
+        <div class="product-details">
+          <span class="detail-tag">250 g/m²</span>
+          <span class="detail-tag">Beach towel</span>
+          <span class="detail-tag">Full Color Print</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€6.29 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BATH TOWEL L -->
+    <div class="product-card fade-in" data-category="towel" onclick="openModal('bardemlModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/image-300x300.jpg" alt="BARDEM L Πετσέτα Μπάνιου">
+      <div class="product-body">
+        <div class="product-category">Πετσέτα Μπάνιου</div>
+        <h3 class="product-name">BARDEM L — Bath Towel 500 g/m²</h3>
+        <p class="product-desc">Premium πετσέτα μπάνιου από 82% βαμβάκι και 18% ανακυκλωμένο βαμβάκι. Μαλακή, απορροφητική, ιδανική για SPA και ξενοδοχεία.</p>
+        <div class="product-details">
+          <span class="detail-tag">500 g/m²</span>
+          <span class="detail-tag">82% Cotton</span>
+          <span class="detail-tag">Eco Ανακυκλωμένο</span>
+          <span class="detail-tag">Embroidered Logo</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€14.45 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAND TOWEL -->
+    <div class="product-card fade-in" data-category="towel" onclick="openModal('bardemsModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/image-300x300.jpg" alt="BARDEM S Πετσέτα Χεριών">
+      <div class="product-body">
+        <div class="product-category">Πετσέτα Χεριών</div>
+        <h3 class="product-name">BARDEM S — Hand Towel 350 g/m²</h3>
+        <p class="product-desc">Πετσέτα χεριών από βαμβάκι (82%) και ανακυκλωμένο βαμβάκι (18%). Τέλεια για μπάνια, SPA lounges και wellness χώρους.</p>
+        <div class="product-details">
+          <span class="detail-tag">350 g/m²</span>
+          <span class="detail-tag">82% Cotton</span>
+          <span class="detail-tag">Eco Friendly</span>
+          <span class="detail-tag">Embroidered Logo</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€1.55 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECO BEACH TOWEL -->
+    <div class="product-card fade-in" data-category="towel" onclick="openModal('sardenhaModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/imag1234566666e-300x300.jpg" alt="SARDENHA Eco Πετσέτα Παραλίας">
+      <div class="product-body">
+        <div class="product-category">Eco Πετσέτα Παραλίας</div>
+        <h3 class="product-name">SARDENHA — Eco Πετσέτα Παραλίας 180 g/m²</h3>
+        <p class="product-desc">Βιώσιμη πετσέτα παραλίας από 70% ανακυκλωμένο βαμβάκι και 30% ανακυκλωμένο πολυεστέρα. Ιδανική για eco-friendly ξενοδοχεία.</p>
+        <div class="product-details">
+          <span class="detail-tag">180 g/m²</span>
+          <span class="detail-tag">70% Recycled</span>
+          <span class="detail-tag">Eco Brand</span>
+          <span class="detail-tag">Full Color Print</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€7.86 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEN'S T-SHIRT -->
+    <div class="product-card fade-in" data-category="textile" onclick="openModal('thcankaraModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2025/03/i1235600000mage.jpg" alt="THC ANKARA Ανδρικό T-shirt">
+      <div class="product-body">
+        <div class="product-category">Ένδυση</div>
+        <h3 class="product-name">THC ANKARA — Ανδρικό T-shirt</h3>
+        <p class="product-desc">Ανδρικό μπλουζάκι χωρίς ραφές, standard εφαρμογή, 100% βαμβάκι (190 γρ./μ²). Διπλό κόψιμο στα μανίκια και στο κάτω μέρος. Διαθέσιμο σε XS-XXL.</p>
+        <div class="product-details">
+          <span class="detail-tag">100% Βαμβάκι</span>
+          <span class="detail-tag">190 γρ./μ²</span>
+          <span class="detail-tag">Χωρίς ραφές</span>
+          <span class="detail-tag">XS – XXL</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€6.49 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOTHBRUSH -->
+    <div class="product-card fade-in" data-category="toiletries" onclick="openModal('delanyModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2024/01/95056_set.jpg" alt="DELANY Οδοντόβουρτσα">
+      <div class="product-body">
+        <div class="product-category">Προσωπική Φροντίδα</div>
+        <h3 class="product-name">DELANY — Οδοντόβουρτσα</h3>
+        <p class="product-desc">Οδοντόβουρτσα για ξενοδοχεία και SPA. Πρακτικό προϊόν για προσωπική φροντίδα με δυνατότητα εκτύπωσης λογοτύπου.</p>
+        <div class="product-details">
+          <span class="detail-tag">Προσωπική Φροντίδα</span>
+          <span class="detail-tag">Logo</span>
+          <span class="detail-tag">Ξενοδοχείο & SPA</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€0.55 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COSMETIC BAG -->
+    <div class="product-card fade-in" data-category="bags" onclick="openModal('chloeModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2026/01/92537_set.jpg" alt="CHLOE Νεσεσέρ">
+      <div class="product-body">
+        <div class="product-category">Τσάντες & Νεσεσέρ</div>
+        <h3 class="product-name">CHLOE — Κοσμηματοθήκη / Νεσεσέρ</h3>
+        <p class="product-desc">Jewelry case from high-density 600D polyester. Ideal for hotels, SPA and travel. Full-color logo printing.</p>
+        <div class="product-details">
+          <span class="detail-tag">Polyester 600D</span>
+          <span class="detail-tag">Υψηλή Πυκνότητα</span>
+          <span class="detail-tag">Full Color Print</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€1.35 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COOLER BAG -->
+    <div class="product-card fade-in" data-category="cooler" onclick="openModal('izmirModal')">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2023/11/98409_set.jpg" alt="IZMIR Ισοθερμική Τσάντα">
+      <div class="product-body">
+        <div class="product-category">Ισοθερμικές Τσάντες</div>
+        <h3 class="product-name">IZMIR — Ισοθερμική Τσάντα 80 g/m²</h3>
+        <p class="product-desc">Insulated bag for beach, pool and excursions. Ideal for seaside hotels. Logo printing on a large surface.</p>
+        <div class="product-details">
+          <span class="detail-tag">80 g/m²</span>
+          <span class="detail-tag">Ισοθερμική</span>
+          <span class="detail-tag">Beach & Pool</span>
+          <span class="detail-tag">Full Print</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€1.24 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta">Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COOLER BAG 10L -->
+    <div class="product-card fade-in" data-category="cooler" onclick="openRotterdamModal()">
+      <img class="product-image" src="https://printground.net/wp-content/uploads/2023/11/98410_set.jpg" alt="ROTTERDAM Ισοθερμική Τσάντα 10L">
+      <div class="product-body">
+        <div class="product-category">Ισοθερμικές Τσάντες</div>
+        <h3 class="product-name">ROTTERDAM — Ισοθερμική Τσάντα 10 L</h3>
+        <p class="product-desc">Μεγάλη ισοθερμική τσάντα 10 λίτρων, 80 g/m². Ιδανική για beach bars, πισίνες και εκδρομές. Μεγάλη επιφάνεια για εκτύπωση λογοτύπου.</p>
+        <div class="product-details">
+          <span class="detail-tag">10 L Χωρητικότητα</span>
+          <span class="detail-tag">80 g/m²</span>
+          <span class="detail-tag">Ισοθερμική</span>
+          <span class="detail-tag">Full Print</span>
+        </div>
+        <div class="product-footer">
+          <div class="product-price">€2.89 <span>/ pc</span></div>
+          <a href="#contact" class="product-cta" onclick="event.stopPropagation()">Quote</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROTTERDAM PRODUCT MODAL -->
+<div class="product-modal-overlay" id="rotterdamModal" onclick="if(event.target===this) closeRotterdamModal()">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeRotterdamModal()">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="rotterdamMainImg" src="https://printground.net/wp-content/uploads/2023/11/98410_set.jpg" alt="ROTTERDAM Τσάντα ψυγείο">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2023/11/98410_set.jpg" onclick="setModalImage('rotterdamModal', this.src, this)" alt="Main">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_104.jpg" onclick="setRotterdamImage(this.src)" alt="Color 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_105.jpg" onclick="setRotterdamImage(this.src)" alt="Color 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_106.jpg" onclick="setRotterdamImage(this.src)" alt="Color 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_119.jpg" onclick="setRotterdamImage(this.src)" alt="Color 4">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_119-c.jpg" onclick="setRotterdamImage(this.src)" alt="Color 5">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98410_124.jpg" onclick="setRotterdamImage(this.src)" alt="Color 6">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 98410-104</div>
+      <h2 class="modal-title">ROTTERDAM. Cooler bag 10 L (80 g/m²)</h2>
+      <div class="modal-price">€2.89 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">
+        Τσάντα ψυγείο από μη υφασμένο ύφασμα (80 g/m²) με κούμπωμα και μπροστινή τσέπη.
+        Χωρητικότητα έως 10λ. Διαστάσεις: 320 x 350 x 170 mm.
+        Ιδανική για beach bars, πισίνες, εκδρομές και εκδηλώσεις. Μεγάλη επιφάνεια για εκτύπωση λογοτύπου.
+      </p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffffff;box-shadow:0 0 0 1px rgba(0,0,0,0.15);"></div>
+            <span>White</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#1e73be;"></div>
+            <span>Blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#dd3333;"></div>
+            <span>Red</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#90ee90;"></div>
+            <span>Light green</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#add8e6;"></div>
+            <span>Light blue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98410_1_1_1.png" alt="Digital Transfer - Μπροστά">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag – Front<br>130 x 60 mm</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98410_1_1_2.png" alt="Transfer Print - Μπροστά">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag – Front<br>130 x 60 mm</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98410_1_3_1.png" alt="Digital Transfer - Πίσω">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag – Back<br>130 x 230 mm</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98410_1_3_2.png" alt="Transfer Print - Πίσω">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag – Back<br>130 x 230 mm</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98410_1_2_1.png" alt="Digital Transfer - Τσέπη">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag – Pocket<br>130 x 180 mm</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98410_1_2_2.png" alt="Transfer Print - Τσέπη">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag – Pocket<br>130 x 180 mm</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeRotterdamModal()">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- DANES PRODUCT MODAL -->
+<div class="product-modal-overlay" id="danesModal" onclick="if(event.target===this) closeModal('danesModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('danesModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="danesModalMainImg" src="https://printground.net/wp-content/uploads/2025/03/image11111123.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2025/03/image11111123.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/95069_set.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/95069_103.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/95069_106.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 4">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/95069_103-pouch.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 5">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/95069_106-pouch.jpg" onclick="setModalImage('danesModal', this.src, this)" alt="DANES 6">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 95069-103</div>
+      <h2 class="modal-title">DANES. Slippers υπνοδωματίου unisex από πολυέστερ</h2>
+      <div class="modal-price">€1.78 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Slippers υπνοδωματίου unisex από πολυέστερ με μαλακή επένδυση. Παραδίδεται σε τσάντα από μη υφασμένο υλικό. 280 x 112 χιλ.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffffff;box-shadow:0 0 0 1px rgba(0,0,0,0.15);"></div>
+            <span>White</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#000000;"></div>
+            <span>Black</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/95069_2_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Slipper 2 - Front<br>90 x 60</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/95069_2_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Slipper 2 - Front<br>90 x 60</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/95069_1_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Slipper - Front<br>90 x 60</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/95069_1_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Slipper - Front<br>90 x 60</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/95069_3_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Shoe bag - Front<br>95 x 60</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/95069_3_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Shoe bag - Front<br>95 x 60</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('danesModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- DERING PRODUCT MODAL -->
+<div class="product-modal-overlay" id="deringModal" onclick="if(event.target===this) closeModal('deringModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('deringModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="deringModalMainImg" src="https://printground.net/wp-content/uploads/2025/03/imag1234e.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2025/03/imag1234e.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_set.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_104.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_105.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 4">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_106.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 5">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_104-pouch.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 6">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98332_105-pouch.jpg" onclick="setModalImage('deringModal', this.src, this)" alt="DERING 7">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 98332-104</div>
+      <h2 class="modal-title">DERING. Beach umbrella</h2>
+      <div class="modal-price">€9.90 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Umbrella from 170T. Delivered in a bag with handle. ø1400 mm | 1600 mm | Bag: 1000 x 120 mm.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffffff;box-shadow:0 0 0 1px rgba(0,0,0,0.15);"></div>
+            <span>White</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#1e73be;"></div>
+            <span>Blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#dd3333;"></div>
+            <span>Red</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98332_1_3_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 3<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_3_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 3<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_3_3.png" alt="Textile Print">
+            <div class="modal-pers-tech">Textile Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 3<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98332_1_4_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 4<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_4_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 4<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_4_3.png" alt="Textile Print">
+            <div class="modal-pers-tech">Textile Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 4<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98332_1_2_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 2<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_2_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 2<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_2_3.png" alt="Textile Print">
+            <div class="modal-pers-tech">Textile Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 2<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98332_1_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 1<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 1<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_1_1_3.png" alt="Textile Print">
+            <div class="modal-pers-tech">Textile Print</div>
+            <div class="modal-pers-detail">Beach umbrella - Panel 1<br>220 x 140</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98332_2_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Case - Front<br>230 x 50</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98332_2_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Case - Front<br>230 x 50</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('deringModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- CALIFORNIA PRODUCT MODAL -->
+<div class="product-modal-overlay" id="californiaModal" onclick="if(event.target===this) closeModal('californiaModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('californiaModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="californiaModalMainImg" src="https://printground.net/wp-content/uploads/2025/03/imag1111e.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2025/03/imag1111e.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_set.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_amb.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 4">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_104.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 5">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_105.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 6">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_108.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 7">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_119.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 8">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_124.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 9">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_128.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 10">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/98377_133.jpg" onclick="setModalImage('californiaModal', this.src, this)" alt="CALIFORNIA 11">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 98377-104</div>
+      <h2 class="modal-title">CALIFORNIA. Beach towel (250 g/m²)</h2>
+      <div class="modal-price">€6.29 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Beach towel από μικροΐνες (250 γρ/μ²), διαθέσιμη σε ευρεία γκάμα χρωμάτων. 1500 x 750 χιλ.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffff00;"></div>
+            <span>Yellow</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffa500;"></div>
+            <span>Orange</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#1e73be;"></div>
+            <span>Blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#a5a5a5;"></div>
+            <span>Dark grey</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#dd3333;"></div>
+            <span>Red</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#90ee90;"></div>
+            <span>Light green</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#add8e6;"></div>
+            <span>Light blue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98377_1_1_1.png" alt="Embroidery">
+            <div class="modal-pers-tech">Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Πετσέτα<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98377_1_1_2.png" alt="3D Embroidery">
+            <div class="modal-pers-tech">3D Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Πετσέτα<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98377_1_1_3.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach towel - Πετσέτα<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98377_1_1_4.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach towel - Πετσέτα<br>280 x 200</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('californiaModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- BARDEM L PRODUCT MODAL -->
+<div class="product-modal-overlay" id="bardemlModal" onclick="if(event.target===this) closeModal('bardemlModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('bardemlModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="bardemlModalMainImg" src="https://printground.net/wp-content/uploads/2023/11/99047_set.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2023/11/99047_set.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99047_a.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99047_106.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99047_113.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 4">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99047_124.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 5">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99047_129.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 6">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2025/11/99047_amb.jpg" onclick="setModalImage('bardemlModal', this.src, this)" alt="BARDEM L 7">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 99047-106</div>
+      <h2 class="modal-title">BARDEM L. Bath towel (500 g/m²) from cotton (82%) and recycled cotton (18%)</h2>
+      <div class="modal-price">€14.45 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Bath towel (500 g/m²) from cotton (82%) and recycled cotton (18%). Made in Europe. 1400 x 700 mm.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffffff;box-shadow:0 0 0 1px rgba(0,0,0,0.15);"></div>
+            <span>White</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#023020;"></div>
+            <span>Dark green</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#add8e6;"></div>
+            <span>Light blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#808080;"></div>
+            <span>Grey</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/99047_1_1_1.png" alt="Embroidery">
+            <div class="modal-pers-tech">Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99047_1_1_2.png" alt="3D Embroidery">
+            <div class="modal-pers-tech">3D Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99047_1_1_3.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99047_1_1_4.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>280 x 200</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('bardemlModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- BARDEM S PRODUCT MODAL -->
+<div class="product-modal-overlay" id="bardemsModal" onclick="if(event.target===this) closeModal('bardemsModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('bardemsModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="bardemsModalMainImg" src="https://printground.net/wp-content/uploads/2023/11/99049_set.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2023/11/99049_set.jpg" onclick="setModalImage('bardemsModal', this.src, this)" alt="BARDEM S 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2025/11/99049_amb.jpg" onclick="setModalImage('bardemsModal', this.src, this)" alt="BARDEM S 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2023/11/99049_129.jpg" onclick="setModalImage('bardemsModal', this.src, this)" alt="BARDEM S 3">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 99049-106</div>
+      <h2 class="modal-title">BARDEM S. Hand towel (350 g/m²) from cotton (82%) and recycled cotton (18%)</h2>
+      <div class="modal-price">€1.55 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Hand towel (350 g/m²) from cotton (82%) and recycled cotton (18%). Made in Europe. 300 x 300 mm.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#ffffff;box-shadow:0 0 0 1px rgba(0,0,0,0.15);"></div>
+            <span>White</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#023020;"></div>
+            <span>Dark green</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#add8e6;"></div>
+            <span>Light blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#808080;"></div>
+            <span>Grey</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/99049_1_1_1.png" alt="Embroidery">
+            <div class="modal-pers-tech">Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>70 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99049_1_1_2.png" alt="3D Embroidery">
+            <div class="modal-pers-tech">3D Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>70 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99049_1_1_3.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>70 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/99049_1_1_4.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach towel - Μπροστινό μέρος<br>70 x 70</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('bardemsModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- SARDENHA PRODUCT MODAL -->
+<div class="product-modal-overlay" id="sardenhaModal" onclick="if(event.target===this) closeModal('sardenhaModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('sardenhaModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="sardenhaModalMainImg" src="https://printground.net/wp-content/uploads/2025/03/imag1234566666e.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2025/03/imag1234566666e.jpg" onclick="setModalImage('sardenhaModal', this.src, this)" alt="SARDENHA 1">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2025/02/99159_134.jpg" onclick="setModalImage('sardenhaModal', this.src, this)" alt="SARDENHA 2">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2025/02/99159_134-a.jpg" onclick="setModalImage('sardenhaModal', this.src, this)" alt="SARDENHA 3">
+        <img class="modal-thumb" src="https://printground.net/wp-content/uploads/2025/02/99159_134-b.jpg" onclick="setModalImage('sardenhaModal', this.src, this)" alt="SARDENHA 4">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 99159-105</div>
+      <h2 class="modal-title">SARDENHA. Beach towel από βαμβάκι (70% ανακυκλωμένο) και πολυέστερ (30% ανακυκλωμένο) (180 g/m²)</h2>
+      <div class="modal-price">€7.86 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Beach towel από βαμβάκι (70% ανακυκλωμένο) και πολυέστερ (30% ανακυκλωμένο) (180 γρ/μ²) με εξαιρετικά κομψό σχεδιασμό για τις ημέρες στην παραλία. 900 x 1700 χιλ.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#00008b;"></div>
+            <span>Dark blue</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#dd3333;"></div>
+            <span>Red</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#add8e6;"></div>
+            <span>Light blue</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2025/02/99159_1_1_3.png" alt="Embroidery">
+            <div class="modal-pers-tech">Embroidery</div>
+            <div class="modal-pers-detail">Beach towel - Κάτω δεξιά<br>270 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2025/02/99159_1_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Beach towel - Κάτω δεξιά<br>280 x 200</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2025/02/99159_1_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Beach towel - Κάτω δεξιά<br>280 x 200</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('sardenhaModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- THC ANKARA PRODUCT MODAL -->
+<div class="product-modal-overlay" id="thcankaraModal" onclick="if(event.target===this) closeModal('thcankaraModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('thcankaraModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="thcankaraModalMainImg" src="https://printground.net/wp-content/uploads/2026/03/11157_set.jpg" alt="THC ANKARA II. Men's T-shirt">
+      <div class="modal-thumb-row">
+
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2026/03/11157_set.jpg" onclick="setModalImage('thcankaraModal', this.src, this)" alt="THC ANKARA 1">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2026/03/11157_119-c.jpg" onclick="setModalImage('thcankaraModal', this.src, this)" alt="THC ANKARA 2">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2026/03/11157_119-b.jpg" onclick="setModalImage('thcankaraModal', this.src, this)" alt="THC ANKARA 3">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2026/03/11157_119-a.jpg" onclick="setModalImage('thcankaraModal', this.src, this)" alt="THC ANKARA 4">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 11157-119-M</div>
+      <h2 class="modal-title">THC ANKARA II. Men's T-shirt</h2>
+      <div class="modal-price">€3.20 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Men's seamless T-shirt with regular fit from 100% cotton (190 g/m²) (color 183: 90% cotton/10% viscose). Features 1x1 elastic trim with reinforcing tape from knitted fabric and double stitching on sleeves and bottom. Sizes: XS, S, M, L, XL, XXL</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#90ee90;"></div>
+            <span>Light green</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('thcankaraModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- DELANY PRODUCT MODAL -->
+<div class="product-modal-overlay" id="delanyModal" onclick="if(event.target===this) closeModal('delanyModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('delanyModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="delanyModalMainImg" src="https://printground.net/wp-content/uploads/2024/01/95056_set.jpg" alt="DELANY. Toothbrush">
+      <div class="modal-thumb-row">
+
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2024/01/95056_set.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 1">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_103-a.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 2">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_box.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 3">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_amb.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 4">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_a.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 5">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_103.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 6">
+        <img class="modal-thumb " src="https://printground.net/wp-content/uploads/2024/01/95056_103-box.jpg" onclick="setModalImage('delanyModal', this.src, this)" alt="DELANY 7">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 95056-103</div>
+      <h2 class="modal-title">DELANY. Toothbrush</h2>
+      <div class="modal-price">€0.55 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Toothbrush with bamboo body and nylon bristles. Delivered in a kraft paper gift box. As the product is made from natural materials, color and printing result may vary between products. Toothbrush: 175 x 14 x 5 mm | Box: 190 x 30 x 15 mm.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#000000;"></div>
+            <span>Black</span>
+          </div>
+          <div class="modal-color">
+            <div class="modal-color-swatch" style="background:#e5d3bf;"></div>
+            <span>Natural</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/95056_1_1_1.png" alt="Laser Engraving">
+            <div class="modal-pers-tech">Laser Engraving</div>
+            <div class="modal-pers-detail">Toothbrush - Handle<br>50 x 8</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/95056_1_1_2.png" alt="Pad Printing">
+            <div class="modal-pers-tech">Pad Printing</div>
+            <div class="modal-pers-detail">Toothbrush - Handle<br>50 x 8</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/10/95056_2_1_1.png" alt="Stickers">
+            <div class="modal-pers-tech">Stickers</div>
+            <div class="modal-pers-detail">Case - Cardboard<br>60 x 20</div>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="modal-cta" onclick="closeModal('delanyModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- IZMIR PRODUCT MODAL -->
+<div class="product-modal-overlay" id="izmirModal" onclick="if(event.target===this) closeModal('izmirModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('izmirModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="izmirModalMainImg" src="https://printground.net/wp-content/uploads/2023/11/98409_set.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2023/11/98409_set.jpg" onclick="setModalImage('izmirModal', this.src, this)" alt="IZMIR 1">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 98409</div>
+      <h2 class="modal-title">IZMIR. Insulated Bag 80 g/m²</h2>
+      <div class="modal-price">€1.24 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Insulated bag for beach, pool and excursions. Ideal for seaside hotels. Logo printing on a large surface.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98409_1_2_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag - Top<br>150 x 90</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98409_1_2_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag - Top<br>150 x 90</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98409_1_3_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag - Back<br>140 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98409_1_3_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag - Back<br>140 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2023/11/98409_1_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Cooler bag - Front<br>140 x 70</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2024/02/98409_1_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Cooler bag - Front<br>140 x 70</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('izmirModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- CHLOE PRODUCT MODAL -->
+<div class="product-modal-overlay" id="chloeModal" onclick="if(event.target===this) closeModal('chloeModal')">
+  <div class="product-modal">
+    <button class="modal-close" onclick="closeModal('chloeModal')">&times;</button>
+
+    <div class="modal-gallery">
+      <img class="modal-main-image" id="chloeModalMainImg" src="https://printground.net/wp-content/uploads/2026/01/92537_set.jpg" alt="">
+      <div class="modal-thumb-row">
+        <img class="modal-thumb active" src="https://printground.net/wp-content/uploads/2026/01/92537_set.jpg" onclick="setModalImage('chloeModal', this.src, this)" alt="CHLOE 1">
+      </div>
+    </div>
+
+    <div class="modal-info">
+      <div class="modal-sku">SKU: 92537</div>
+      <h2 class="modal-title">CHLOE. Jewelry Case / Cosmetic Bag</h2>
+      <div class="modal-price">€1.35 <span style="font-size:16px;font-weight:400;color:var(--text-light);">/ pc</span></div>
+      <p class="modal-desc">Jewelry case from high-density 600D polyester. Ideal for hotels, SPA and travel. Full-color logo printing.</p>
+
+      <div class="modal-colors">
+        <div class="modal-colors-label">Available Colors</div>
+        <div class="modal-colors-row">
+
+        </div>
+      </div>
+
+      <div class="modal-personalization">
+        <div class="modal-pers-title">PRODUCT PERSONALIZATION OPTIONS</div>
+        <div class="modal-pers-grid">
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2026/01/92537_1_1_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Case - Front<br>100 x 80</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2026/01/92537_1_1_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Case - Front<br>100 x 80</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2026/01/92537_1_2_1.png" alt="Digital Transfer">
+            <div class="modal-pers-tech">Digital Transfer</div>
+            <div class="modal-pers-detail">Case - Back<br>100 x 80</div>
+          </div>
+          <div class="modal-pers-item">
+            <img src="https://printground.net/wp-content/uploads/2026/01/92537_1_2_2.png" alt="Transfer Print">
+            <div class="modal-pers-tech">Transfer Print</div>
+            <div class="modal-pers-detail">Case - Back<br>100 x 80</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="modal-cta" onclick="closeModal('chloeModal')">Request a Quote &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label">What Our Clients Say</div>
+    <h2 class="section-title fade-in">They Trust Printground</h2>
+    <div class="testimonials-grid fade-in">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "We received 500 slippers with our logo in excellent quality. Our guests often make positive comments about them. We will definitely reorder."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">Μ</div>
+          <div>
+            <div class="author-name">Μαρία Α.</div>
+            <div class="author-role">Manager, Boutique Hotel — Mykonos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Fast service, high quality and competitive prices. Our branded beach towels stand out by the pool. Excellent cooperation!"
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">Γ</div>
+          <div>
+            <div class="author-name">Γιώργος Π.</div>
+            <div class="author-role">F&B Manager, Resort 5★ — Crete</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "For our SPA we chose premium quality branded bath towels. The Printground team helped us with the design. Wonderful result!"
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">Ε</div>
+          <div>
+            <div class="author-name">Ελένη Κ.</div>
+            <div class="author-role">SPA Manager, Wellness Center — Thessaloniki</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="why-inner">
+    <div class="section-label">Why Printground</div>
+    <h2 class="section-title fade-in">Trust in Every Detail</h2>
+    <div class="why-grid fade-in">
+      <div class="why-item">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3 class="why-title">Custom Printing</h3>
+        <p class="why-text">Embroidered or full-color logo print on all products, with color accuracy.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <h3 class="why-title">From 50 Pieces</h3>
+        <p class="why-text">No huge quantities needed. Flexible orders that fit your size.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3 class="why-title">EU Shipping</h3>
+        <p class="why-text">Shipping throughout Greece and the European Union. Fast and reliable.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3 class="why-title">Fast Response</h3>
+        <p class="why-text">Receive a quote within 24 hours. Our team is always available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title fade-in">Simple Process in 4 Steps</h2>
+    <div class="steps fade-in">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Contact</h3>
+        <p class="step-text">Στείλτε μας τα στοιχεία σας και τις needs μέσω της φόρμας.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Quote</h3>
+        <p class="step-text">Receive a detailed quote within 24 hours.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Design Approval</h3>
+        <p class="step-text">Approve your logo proof before production.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Delivery</h3>
+        <p class="step-text">Your branded products are delivered straight to your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left fade-in">
+    <h2>
+      Start<br>
+      <em>standing out</em><br>
+      today
+    </h2>
+    <p>
+      Επικοινωνήστε μαζί μας για να λάβετε εξατομικευμένη προσφορά για το ξενοδοχείο ή το SPA σας. Απαντάμε εντός 24 ωρών.
+    </p>
+    <div class="contact-info">
+      <div class="contact-row">
+        <div class="contact-ico">📞</div>
+        <div class="contact-detail">
+          <strong>Phone</strong>
+          (+359) 896 718 110
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-ico">✉️</div>
+        <div class="contact-detail">
+          <strong>Email</strong>
+          sales@printground.net
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-ico">📍</div>
+        <div class="contact-detail">
+          <strong>Address</strong>
+          Business Park Flavia, Plovdiv, Bulgaria
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-ico">⏰</div>
+        <div class="contact-detail">
+          <strong>Working Hours</strong>
+          Mon – Fri / 09:00 – 17:00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right fade-in">
+    <div class="contact-form" id="contactForm">
+      <h3 class="form-title">Request a Quote</h3>
+      <form onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Επωνυμία Επιχείρησης *</label>
+            <input type="text" placeholder="π.χ. Aegean Resort" required>
+          </div>
+          <div class="form-group">
+            <label>Τύπος Επιχείρησης *</label>
+            <select required>
+              <option value="">Επιλέξτε...</option>
+              <option>Ξενοδοχείο</option>
+              <option>SPA Κέντρο</option>
+              <option>Wellness Κέντρο</option>
+              <option>Resort</option>
+              <option>Άλλο</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ονοματεπώνυμο *</label>
+            <input type="text" placeholder="Γιώργος Παπαδόπουλος" required>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="info@hotel.gr" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="+30 210 000 0000">
+        </div>
+        <div class="form-group">
+          <label>Interested in</label>
+          <select>
+            <option value="">Select product...</option>
+            <option>Hotel Slippers</option>
+            <option>Umbrellas Παραλίας</option>
+            <option>Towels Μπάνιου</option>
+            <option>Beach Towels</option>
+            <option>Product Bundle</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Εκτιμώμενη Ποσότητα</label>
+          <select>
+            <option>50 – 100 τεμάχια</option>
+            <option>100 – 250 τεμάχια</option>
+            <option>250 – 500 τεμάχια</option>
+            <option>500 – 1.000 τεμάχια</option>
+            <option>1.000 – 2.500 τεμάχια</option>
+            <option>Άνω των 2.500 τεμαχίων</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (optional)</label>
+          <textarea placeholder="Πείτε μας περισσότερα για τις needs..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          Send Request →
+        </button>
+        <p class="form-note">* Απαντάμε εντός 24 ωρών. Ελάχιστη παραγγελία 50 τεμάχια.</p>
+      </form>
+    </div>
+
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">✅</div>
+      <h3>Thank you!</h3>
+      <p>Your request has been received. Our team will contact you within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="#contact">📩 Αίτηση Quoteς — Δωρεάν & Χωρίς Δέσμευση</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="Print Ground logo linkedin-01.png" alt="Printground" style="height: 110px; width: auto; margin-bottom: 16px;">
+  <p class="footer-tagline">Branded products for unforgettable hospitality</p>
+  <div class="footer-links">
+    <a href="https://eu.printground.net" target="_blank">Main Website</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:sales@printground.net">sales@printground.net</a>
+  </div>
+  <p class="footer-bottom">© 2026 Print Ground Ltd. Business Park Flavia, Plovdiv, Bulgaria · All Rights Reserved</p>
+</footer>
+
+<script>
+  // Countdown spots (creates urgency feeling)
+  let spots = 12;
+  setInterval(() => {
+    if (Math.random() > 0.97 && spots > 6) {
+      spots--;
+      const el = document.getElementById('spotsLeft');
+      if (el) el.textContent = spots;
+    }
+  }, 8000);
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Product filter
+  function filterProducts(cat, el) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Form submit
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // Sticky nav color change
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 80) {
+      nav.style.background = 'rgba(10,35,66,0.98)';
+    } else {
+      nav.style.background = 'rgba(10,35,66,0.92)';
+    }
+  });
+
+  // Generic Modal Functions
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => modal.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.classList.remove('active');
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  function setModalImage(modalId, src, thumbEl) {
+    document.getElementById(modalId + 'MainImg').src = src;
+    thumbEl.parentElement.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+    thumbEl.classList.add('active');
+  }
+
+  // Rotterdam Modal (backward compatible)
+  function openRotterdamModal() { openModal('rotterdamModal'); }
+  function closeRotterdamModal() { closeModal('rotterdamModal'); }
+  function setRotterdamImage(src) {
+    document.getElementById('rotterdamMainImg').src = src;
+    event.target.parentElement.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.product-modal-overlay.active').forEach(m => {
+        m.classList.remove('active');
+        setTimeout(() => { m.style.display = 'none'; document.body.style.overflow = ''; }, 300);
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
