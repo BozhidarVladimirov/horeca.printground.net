@@ -2800,15 +2800,18 @@
   <div class="contact-right fade-in">
     <div class="contact-form" id="contactForm">
       <h3 class="form-title">Request a Quote</h3>
-      <form onsubmit="submitForm(event)">
+      <form action="https://formsubmit.co/contact@globalepx.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from horeca.printground.net">
+        <input type="hidden" name="_next" value="https://horeca.printground.net/?success=1">
+        <input type="hidden" name="_template" value="table">
         <div class="form-row">
           <div class="form-group">
             <label>Company Name *</label>
-            <input type="text" placeholder="e.g. Aegean Resort" required>
+            <input type="text" name="company" placeholder="e.g. Aegean Resort" required>
           </div>
           <div class="form-group">
             <label>Business Type *</label>
-            <select required>
+            <select name="business_type" required>
               <option value="">Select...</option>
               <option>Hotel</option>
               <option>SPA Center</option>
@@ -2821,20 +2824,20 @@
         <div class="form-row">
           <div class="form-group">
             <label>Full Name *</label>
-            <input type="text" placeholder="George Papadopoulos" required>
+            <input type="text" name="name" placeholder="George Papadopoulos" required>
           </div>
           <div class="form-group">
             <label>Email *</label>
-            <input type="email" placeholder="info@hotel.gr" required>
+            <input type="email" name="email" placeholder="info@hotel.gr" required>
           </div>
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <input type="tel" placeholder="+30 210 000 0000">
+          <input type="tel" name="phone" placeholder="+30 210 000 0000">
         </div>
         <div class="form-group">
           <label>Interested in</label>
-          <select>
+          <select name="product">
             <option value="">Select product...</option>
             <option>Hotel Slippers</option>
             <option>Beach Umbrellas</option>
@@ -2845,7 +2848,7 @@
         </div>
         <div class="form-group">
           <label>Estimated Quantity</label>
-          <select>
+          <select name="quantity">
             <option>50 – 100 pieces</option>
             <option>100 – 250 pieces</option>
             <option>250 – 500 pieces</option>
@@ -2856,7 +2859,7 @@
         </div>
         <div class="form-group">
           <label>Message (optional)</label>
-          <textarea placeholder="Tell us more about your needs..."></textarea>
+          <textarea name="message" placeholder="Tell us more about your needs..."></textarea>
         </div>
         <button type="submit" class="form-submit">
           Send Request →
